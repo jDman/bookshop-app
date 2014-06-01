@@ -7,7 +7,7 @@ Bookshop.Collections = Bookshop.Collections || {};
     url: 'scripts/books/books.json',
     parse: function(response){
       response = _.each(response, function(book){
-        book.price = parseFloat(book.price);
+        book.price = parseFloat(book.price).toFixed(2);
       });
       return response;
     }

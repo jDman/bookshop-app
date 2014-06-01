@@ -2,20 +2,28 @@
   <img src="<%- picture %>" alt="<%- title %>" width="150" height="200"/>
 </div>
 <div class="bookDetails">
-  <h3><%- title %></h3>
-  <h4><small>by <%- author %></small></h4>
+  <h5><%- title %></h5>
+  <h6 class="subheader">by <%- author %></h6>
   <p>£<%- price %></p>
 
-  <a href="#" class="button" data-reveal-id="myModal<%= id %>">Read more...</a>
+  <a href="#" class="button success" data-reveal-id="myModal<%= id %>">Read more...</a>
 
   <div id="myModal<%= id %>" class="reveal-modal" data-reveal>
-    <h3><%- title %> <% _.each(tags, function(tag){%>
-          <span class="label radius round"><%- tag %></span>
-       <%}) %></h3>
-    <p>Author: <%- author %> | Publisher: <%- publisher %></p>
+    <div class="clearfix">
+      <div class="left">
+        <h3><%- title %></h3>
+        <p>Author: <%- author %> | Publisher: <%- publisher %></p>
+      </div>
+      <div class="right tags">
+          Tags:
+         <% _.each(tags, function(tag){%>
+            <span class="label radius round"><%- tag %></span>
+         <%}) %>
+      </div>
+    </div>
     <div><%- description %></div>
-    <p>Rating: <% if( _.isNumber( rating ) ){ %>
-      <%- rating %>
+    <p class="label success">Rating: <% if( _.isNumber( rating ) ){ %>
+      <strong><%- rating %></strong>
       <% } %></p>
     <a class="close-reveal-modal">&#215;</a>
   </div>

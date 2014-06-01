@@ -10,10 +10,13 @@ Bookshop.Views = Bookshop.Views || {};
 
     id: 'filters',
 
+    className: 'button-group',
+
     initialize: function(){
       this.render();
       this.books = Bookshop.booksView.collection;
     },
+
     events:{
 
         'click #ratedHighToLow': 'highToLow',
@@ -52,7 +55,7 @@ Bookshop.Views = Bookshop.Views || {};
 
 
     render: function(response){
-      $('#filterPanel').append(this.$el.html(this.template()));
+      $('.button-bar').append(this.$el.html(this.template()));
 
       return this;
     }

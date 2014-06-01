@@ -67,13 +67,18 @@ body {
 /* filters */
 #filters{
   list-style: none;
-  margin-left: 0;
 }
-
+/*books view*/
+.bookImg{
+  text-align: center;
+}
 /* books modal */
 .bookDetails h3{
   height: 75px;
   overflow: hidden;
+}
+.tags{
+  padding-right: 20px;
 }
 
 /* Responsive: Portrait tablets and up */
