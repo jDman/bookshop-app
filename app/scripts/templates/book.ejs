@@ -1,0 +1,22 @@
+<div class="bookImg panel">
+  <img src="<%- picture %>" alt="<%- title %>" width="150" height="200"/>
+</div>
+<div class="bookDetails">
+  <h3><%- title %></h3>
+  <h4><small>by <%- author %></small></h4>
+  <p>£<%- price %></p>
+
+  <a href="#" class="button" data-reveal-id="myModal<%= id %>">Read more...</a>
+
+  <div id="myModal<%= id %>" class="reveal-modal" data-reveal>
+    <h3><%- title %> <% _.each(tags, function(tag){%>
+          <span class="label radius round"><%- tag %></span>
+       <%}) %></h3>
+    <p>Author: <%- author %> | Publisher: <%- publisher %></p>
+    <div><%- description %></div>
+    <p>Rating: <% if( _.isNumber( rating ) ){ %>
+      <%- rating %>
+      <% } %></p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>
