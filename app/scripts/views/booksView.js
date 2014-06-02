@@ -19,14 +19,13 @@ Bookshop.Views.books = Backbone.View.extend({
     that.collection.fetch({
       dataType: "json",
       success: function(response){
-        console.log(response);
         that.render(response);
       },
       error: function(){console.log('Collection not found');}
     });
 
   },
-  
+
   startFoundation: function(){
     $(document).foundation();
   },
